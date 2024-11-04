@@ -1,0 +1,166 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Links e listas */
+ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+/* Logo e cabeçalho */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #f9f9fb;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Barra de separação */
+.bar {
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-top: solid 1px #cdcdcd;
+    border-bottom: solid 1px #cdcdcd;
+}
+
+/* Estrutura de layout principal */
+.content {
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    gap: 3rem;
+    grid-template-areas: 
+        "sidebar main anchors";
+    grid-template-columns: minmax(0, 15rem) 1fr minmax(0, 15rem);
+    padding: 2rem 1rem;
+    flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-right: solid 1px #cdcdcd;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Main content */
+.main-content {
+    grid-area: main;
+    padding: 0 1rem;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.main-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    margin-bottom: 1.5rem;
+}
+
+.main-content ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+}
+
+.main-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Âncoras */
+.anchors {
+    grid-area: anchors;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-left: solid 1px #cdcdcd;
+}
+
+.anchors h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Rodapé */
+.footer {
+    min-height: 100px;
+    border-top: solid 1px #cdcdcd;
+    background-color: #f9f9fb;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Imagens centralizadas */
+figure {
+    text-align: center;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .sidebar, .anchors {
+        border: none;
+        padding: 0;
+    }
+
+    .sidebar, .anchors {
+        margin-bottom: 2rem;
+    }
+}
